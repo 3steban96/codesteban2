@@ -138,22 +138,24 @@ function downloadMusicMP3() {
         if (!response.ok) {
             throw new Error('Error al descargar el archivo de audio');
         }
-        return response.blob();
+        return response.json(); // Ahora esperamos la respuesta como JSON
     })
-    .then(blob => {
-        const url = window.URL.createObjectURL(blob, { type: 'audio/mp3' });
+    .then(data => {
+        const { fileName, audioData } = data; // Obtenemos el nombre del archivo y los datos de audio del backend
+        const url = 'data:audio/mp3;base64,' + audioData; // Creamos la URL de los datos de audio
+
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'audio.mp3'; 
+        a.download = fileName; // Asignamos el nombre del archivo proporcionado por el backend
         document.body.appendChild(a);
         a.click();
-        window.URL.revokeObjectURL(url);
         a.remove();
     })
     .catch(error => {
         console.error('Error al descargar el archivo de audio:', error);
     });
 };
+
 
 function downloadVideo() {
     const inputDW = document.querySelector(".inputDownloadMusic").value;
@@ -168,22 +170,24 @@ function downloadVideo() {
         if (!response.ok) {
             throw new Error('Error al descargar el archivo');
         }
-        return response.blob();
+        return response.json(); // Esperamos la respuesta como JSON
     })
-    .then(blob => {
-        const url = window.URL.createObjectURL(blob);
+    .then(data => {
+        const { fileName } = data; // Obtenemos el nombre del archivo proporcionado por el backend
+        const url = URL.createObjectURL(data); // Creamos la URL del archivo
+
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'video.mp4'; 
+        a.download = fileName; // Asignamos el nombre del archivo proporcionado por el backend
         document.body.appendChild(a);
         a.click();
-        window.URL.revokeObjectURL(url);
         a.remove();
     })
     .catch(error => {
         console.error('Error al descargar el archivo:', error);
     });
 }
+
 function mostrarNombreArchivos(input) {
     var lista = document.getElementById('listaArchivos');
     lista.innerHTML = ""; 
