@@ -544,3 +544,37 @@
       opacity: 1;
     }
   }
+  .resize-handle {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    position: absolute;
+    cursor: pointer;
+    }
+    .resize-handleV3 {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    position: absolute;
+    cursor: pointer;
+    }
+
+    .top-left {
+    top: -5px;
+    left: -5px;
+    }
+
+    .top-right {
+    top: -5px;
+    right: -5px;
+    }
+
+    .bottom-left {
+    bottom: -5px;
+    left: -5px;
+    }
+
+    .bottom-right {
+    bottom: -5px;
+    right: -5px;
+    }
