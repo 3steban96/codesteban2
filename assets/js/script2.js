@@ -155,8 +155,6 @@ function downloadMusicMP3() {
         console.error('Error al descargar el archivo de audio:', error);
     });
 };
-
-
 function downloadVideo() {
     const inputDW = document.querySelector(".inputDownloadMusic").value;
     fetch('https://backenddownloadmusic-1.onrender.com/downloadMp4',{
@@ -170,15 +168,15 @@ function downloadVideo() {
         if (!response.ok) {
             throw new Error('Error al descargar el archivo');
         }
-        return response.json(); // Esperamos la respuesta como JSON
+        return response.blob(); // Esperamos la respuesta como un blob
     })
-    .then(data => {
-        const { fileName } = data; // Obtenemos el nombre del archivo proporcionado por el backend
-        const url = URL.createObjectURL(data); // Creamos la URL del archivo
+    .then(blob => {
+        const fileName = 'video.mp4'; // Supongamos que el nombre predeterminado del archivo es video.mp4
+        const url = URL.createObjectURL(blob); // Creamos la URL del archivo
 
         const a = document.createElement('a');
         a.href = url;
-        a.download = fileName; // Asignamos el nombre del archivo proporcionado por el backend
+        a.download = fileName; // Asignamos el nombre del archivo
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -187,6 +185,9 @@ function downloadVideo() {
         console.error('Error al descargar el archivo:', error);
     });
 }
+
+
+
 
 function mostrarNombreArchivos(input) {
     var lista = document.getElementById('listaArchivos');
