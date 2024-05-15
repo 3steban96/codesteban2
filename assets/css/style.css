@@ -344,7 +344,7 @@
   .whatsapp {
     margin-top: -.9em;
     margin-left: -1.2em;
-    fill: #40C351;
+    fill: #03A9F4;
   }  
   .card2:hover {
     cursor: pointer;
@@ -373,13 +373,13 @@
   .card4:hover {
     cursor: pointer;
     scale: 1.1;
-    background-color: #40C351;
-    box-shadow: #40c35192 33px 32px 25px 22px, rgba(0, 0, 0, 0.3) 0px 12px 32px -1px;
+    background-color: #03A9F4;
+    box-shadow: #03a8f49f 33px 32px 25px 22px, rgba(0, 0, 0, 0.3) 0px 12px 32px -1px;
     transition: .2s ease-in-out;
   }
   
   .card4:hover .whatsapp {
-    fill: #40C351;
+    fill: #03A9F4;
   }
 
 
@@ -577,4 +577,14 @@
     .bottom-right {
     bottom: -5px;
     right: -5px;
+    }
+    .btnOff{
+      border: none;
+      background-color: transparent;
+    }
+    .btnOff:hover{
+      border: none;
+      background-color: red;
+      color: white;
+      border-radius: 5px;
     }

@@ -46,8 +46,11 @@ function linkedIn(){
 function gitHub(){
     window.open("https://github.com/3steban96");
 }
-function whatsapp(){
-    window.open("https://wa.me/573012246095");
+function mail(){
+    var mail = "andersonrodriguez748@gmail.com";
+    var subject = "Estoy interesado en tus servicios"
+    var mailToLink="mailto:" + mail + "?subject=" + encodeURIComponent(subject);
+    window.location.href = mailToLink;
 }
 function btnOff() {
 var ventana = window.open("", "_self");
