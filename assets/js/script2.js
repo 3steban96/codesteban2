@@ -81,36 +81,24 @@ function stackTech(){
     iconProjects.style.display="block";
     display.style.display = "block";
 }
+function toggleWindow(windowId) {
+    const windows = ["downloadMusic", "convertFile", "fiapp"];
+    windows.forEach(id => {
+        const windowElement = document.getElementById(id);
+        windowElement.style.display = (id === windowId) ? "block" : "none";
+    });
+}
+
 function wDownloadMusic() {
-    var windowDM = document.getElementById("downloadMusic");
-    var windowCF = document.getElementById("convertFile");
-    var windowFP = document.getElementById("fiapp");
-    if (windowCF.style.display == "block") {
-        windowCF.style.display = "none";
-        windowFP.style.display = "none";
-    }
-    windowDM.style.display = "block";
+    toggleWindow("downloadMusic");
 }
 
 function wConvertFile() {
-    var windowCF = document.getElementById("convertFile");
-    var windowDM = document.getElementById("downloadMusic");
-    var windowFP = document.getElementById("fiapp");
-    if (windowDM.style.display == "block") {
-        windowDM.style.display = "none";
-        windowFP.style.display = "none";
-    }
-    windowCF.style.display = "block";
+    toggleWindow("convertFile");
 }
-function wFiapp() {    
-    var windowFP = document.getElementById("fiapp");
-    var windowCF = document.getElementById("convertFile");
-    var windowDM = document.getElementById("downloadMusic");
-    if (windowDM.style.display == "block") {
-        windowDM.style.display = "none";
-        windowCF.style.display = "none";
-    }
-    windowFP.style.display = "block";
+
+function wFiapp() {
+    toggleWindow("fiapp");
 }
 document.addEventListener("DOMContentLoaded", function() {
     const input = document.querySelector(".inputDownloadMusic");
