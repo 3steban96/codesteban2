@@ -35,9 +35,9 @@ document.querySelector('#app').innerHTML = `
                     <p>Windows PowerShell Copyright (C) Microsoft Corporation. Todos los derechos reservados.</p>                                
                     <p>la nueva tecnología PowerShell multiplataforma https://aka.ms/pscore6</p>                                 
                     <p>Comandos para la navegación en la pagina:</p>                                 
-                    <p>cd C:\Users\Home\proyectos</p>                                 
-                    <p>cd C:\Users\Home\curriculum</p>                                 
-                    <p>cd C:\Users\Home\tecnologias</p>
+                    <p>cd C:\\Users\\Home\\Proyectos</p>                                 
+                    <p>cd C:\\Users\\Home\\Curriculum</p>                                 
+                    <p>cd C:\\Users\\Home\\Tecnologias</p>
                     <form id="commandForm">
                         <p>C:\Users\Home><input class="inputShell" placeholder="escribe tu comando"id="commandInput"autocomplete="off"/></p> 
                     </form>
@@ -98,63 +98,117 @@ document.querySelector('#app').innerHTML = `
                                 </div>
                             </nav>
                         </div>                                
-                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10" style="display: none; background-color: #f8f9fa; border-radius: 0 0 10px 0;" id="bizLinguapp">
-                            <div style="padding-top: 20px;">
-                                <div class="row" style="text-align: center;font-weight: bold;">
-                                    <h1 style="color: #212529;">BizLinguapp</h1>
+                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10 project-container" style="display: none;" id="bizLinguapp">
+                            <div class="project-card">
+                                <h1 class="project-title">BizLinguapp</h1>
+                                <p class="project-description">Una aplicación de enseñanza y practica de ingles laboral</p>
+                                <div class="project-tags">
+                                    <span class="badge rounded-pill text-bg-primary">English</span>
+                                    <span class="badge rounded-pill text-bg-light">Practice</span>
+                                    <span class="badge rounded-pill text-bg-info">Work</span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12" style="text-align: center; padding: 20px;">
-                                        <p style="color: #212529; font-size: 1.2rem;">Una aplicación de enseñanza y practica de ingles laboral</p>
-                                        <div style="margin-top: 20px;">
-                                            <span class="badge rounded-pill text-bg-primary">English</span>
-                                            <span class="badge rounded-pill text-bg-light">Practice</span>
-                                            <span class="badge rounded-pill text-bg-info">Work</span>
+                                
+                                <!-- Screenshots Section -->
+                                <div class="screenshots-section">
+                                    <div class="screenshots-title">Capturas de pantalla</div>
+                                    <div class="screenshots-gallery" id="bizlinguapp-gallery">
+                                        <div class="screenshot-item" onclick="openScreenshotModal(this)">
+                                            <img src="./assets/img/bizlinguapp_screenshot_home.jpg" alt="BizLinguapp Interface">
+                                            <div class="screenshot-caption">Interfaz Principal</div>
                                         </div>
-                                        <button onclick="openBizLinguapp()" style="margin-top: 30px; border: none; background-color: #0078d4; padding: 10px 20px; border-radius: 10px; color: white; font-weight: bold; cursor: pointer;">
-                                            Ver en Google Play
-                                        </button>
+                                        <div class="screenshot-item" onclick="openScreenshotModal(this)">
+                                            <img src="./assets/img/bizlinguapp_screenshot_lessons.jpg" alt="Lecciones">
+                                            <div class="screenshot-caption">Lecciones de Vocabulario</div>
+                                        </div>
+                                        <div class="screenshot-item" onclick="openScreenshotModal(this)">
+                                            <img src="./assets/img/bizlinguapp_screenshot_professional.jpg" alt="Práctica">
+                                            <div class="screenshot-caption">Ejercicios Prácticos</div>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-nav">
+                                        <button class="gallery-nav-btn" onclick="scrollGallery('bizlinguapp-gallery', -1)">◀</button>
+                                        <button class="gallery-nav-btn" onclick="scrollGallery('bizlinguapp-gallery', 1)">▶</button>
                                     </div>
                                 </div>
+                                
+                                <button onclick="openBizLinguapp()" class="project-btn" aria-label="Abrir BizLinguapp en Google Play">
+                                    Ver en Google Play
+                                </button>
                             </div>
                         </div>
-                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10" style="display: none; background-color: #f8f9fa; border-radius: 0 0 10px 0;" id="hseqSystem">
-                            <div style="padding-top: 20px;">
-                                <div class="row" style="text-align: center;font-weight: bold;">
-                                    <h1 style="color: #212529;">HSEQ System</h1>
+                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10 project-container" style="display: none;" id="hseqSystem">
+                            <div class="project-card">
+                                <h1 class="project-title">HSEQ System</h1>
+                                <p class="project-description">Gestiona la seguridad, salud, medio ambiente y calidad de tu empresa de forma simple y efectiva</p>
+                                <div class="project-tags">
+                                    <span class="badge rounded-pill text-bg-secondary">Work</span>
+                                    <span class="badge rounded-pill text-bg-success">Empresas</span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12" style="text-align: center; padding: 20px;">
-                                        <p style="color: #212529; font-size: 1.2rem;">Gestiona la seguridad, salud, medio ambiente y calidad de tu empresa de forma simple y efectiva</p>
-                                        <div style="margin-top: 20px;">
-                                            <span class="badge rounded-pill text-bg-secondary">Work</span>
-                                            <span class="badge rounded-pill text-bg-success">Empresas</span>
+                                
+                                <!-- Screenshots Section -->
+                                <div class="screenshots-section">
+                                    <div class="screenshots-title">Capturas de pantalla</div>
+                                    <div class="screenshots-gallery" id="hseq-gallery">
+                                        <div class="screenshot-item" onclick="openScreenshotModal(this)">
+                                            <img src="./assets/img/hseq_screenshot_1.jpg" alt="Dashboard HSEQ">
+                                            <div class="screenshot-caption">Panel de Control</div>
                                         </div>
-                                        <button onclick="openHseqSystem()" style="margin-top: 30px; border: none; background-color: #0078d4; padding: 10px 20px; border-radius: 10px; color: white; font-weight: bold; cursor: pointer;">
-                                            Ir al sitio
-                                        </button>
+                                        <div class="screenshot-item" onclick="openScreenshotModal(this)">
+                                            <img src="./assets/img/hseq_screenshot_2.jpg" alt="Reportes">
+                                            <div class="screenshot-caption">Gestión de Incidentes</div>
+                                        </div>
+                                        <div class="screenshot-item" onclick="openScreenshotModal(this)">
+                                            <img src="./assets/img/hseq_screenshot_3.jpg" alt="Métricas">
+                                            <div class="screenshot-caption">Métricas y Análisis</div>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-nav">
+                                        <button class="gallery-nav-btn" onclick="scrollGallery('hseq-gallery', -1)">◀</button>
+                                        <button class="gallery-nav-btn" onclick="scrollGallery('hseq-gallery', 1)">▶</button>
                                     </div>
                                 </div>
+                                
+                                <button onclick="openHseqSystem()" class="project-btn" aria-label="Ir al sitio de HSEQ System">
+                                    Ir al sitio
+                                </button>
                             </div>
                         </div>
-                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10" style="display: none; background-color: #f8f9fa; border-radius: 0 0 10px 0;" id="parkingSystem">
-                            <div style="padding-top: 20px;">
-                                <div class="row" style="text-align: center;font-weight: bold;">
-                                    <h1 style="color: #212529;">Parking System</h1>
+                        <div class="col-sm-8 col-md-10 col-lg-10 col-xl-10 project-container" style="display: none;" id="parkingSystem">
+                            <div class="project-card">
+                                <h1 class="project-title">Parking System</h1>
+                                <p class="project-description">Gestiona tu estacionamiento de forma simple y efectiva</p>
+                                <div class="project-tags">
+                                    <span class="badge rounded-pill text-bg-secondary">Work</span>
+                                    <span class="badge rounded-pill text-bg-warning">Parking Management</span>
+                                    <span class="badge rounded-pill text-bg-success">Empresas</span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-12" style="text-align: center; padding: 20px;">
-                                        <p style="color: #212529; font-size: 1.2rem;">Gestiona tu estacionamiento de forma simple y efectiva</p>
-                                        <div style="margin-top: 20px;">
-                                            <span class="badge rounded-pill text-bg-secondary">Work</span>
-                                            <span class="badge rounded-pill text-bg-warning">Parking Management</span>
-                                            <span class="badge rounded-pill text-bg-success">Empresas</span>
+                                
+                                <!-- Screenshots Section -->
+                                <div class="screenshots-section">
+                                    <div class="screenshots-title">Capturas de pantalla</div>
+                                    <div class="screenshots-gallery" id="parking-gallery">
+                                        <div class="screenshot-item" onclick="openScreenshotModal(this)">
+                                            <img src="./assets/img/parking_screenshot_1.jpg" alt="Dashboard Parking">
+                                            <div class="screenshot-caption">Vista General</div>
                                         </div>
-                                        <button onclick="openParkingSystem()" style="margin-top: 30px; border: none; background-color: #0078d4; padding: 10px 20px; border-radius: 10px; color: white; font-weight: bold; cursor: pointer;">
-                                            Ir al sitio
-                                        </button>
+                                        <div class="screenshot-item" onclick="openScreenshotModal(this)">
+                                            <img src="./assets/img/parking_screenshot_2.jpg" alt="Gestión">
+                                            <div class="screenshot-caption">Control de Espacios</div>
+                                        </div>
+                                        <div class="screenshot-item" onclick="openScreenshotModal(this)">
+                                            <img src="./assets/img/parking_screenshot_3.jpg" alt="Pagos">
+                                            <div class="screenshot-caption">Sistema de Pagos</div>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-nav">
+                                        <button class="gallery-nav-btn" onclick="scrollGallery('parking-gallery', -1)">◀</button>
+                                        <button class="gallery-nav-btn" onclick="scrollGallery('parking-gallery', 1)">▶</button>
                                     </div>
                                 </div>
+                                
+                                <button onclick="openParkingSystem()" class="project-btn" aria-label="Ir al sitio de Parking System">
+                                    Ir al sitio
+                                </button>
                             </div>
                         </div>
                     </div>                          
@@ -188,7 +242,7 @@ document.querySelector('#app').innerHTML = `
         <div class="row rowContentProjects" >
             <div class="container-fluid contentCol1">
                 <div class="col-12 projects">            
-                    <object data='./HojaDeVida2024.pdf'type="application/pdf" width="100%" height="100%">
+                    <object data='./CV-AndersonEstebanRodriguezCruz.pdf'type="application/pdf" width="100%" height="100%">
                     </object>                            
                 </div>
             </div>                  
@@ -350,6 +404,14 @@ document.querySelector('#app').innerHTML = `
                                 </svg>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-3 col-md-4 col-lg-4 col-xl-4 iconTech">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="60px" viewBox="-47.5 0 351 351" preserveAspectRatio="xMidYMid"><defs><path d="M1.253 280.732l1.605-3.131 99.353-188.518-44.15-83.475C54.392-1.283 45.074.474 43.87 8.188L1.253 280.732z" id="a"/><filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="b"><feGaussianBlur stdDeviation="17.5" in="SourceAlpha" result="shadowBlurInner1"/><feOffset in="shadowBlurInner1" result="shadowOffsetInner1"/><feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" in="shadowInnerInner1"/></filter><path d="M134.417 148.974l32.039-32.812-32.039-61.007c-3.042-5.791-10.433-6.398-13.443-.59l-17.705 34.109-.53 1.744 31.678 58.556z" id="c"/><filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="d"><feGaussianBlur stdDeviation="3.5" in="SourceAlpha" result="shadowBlurInner1"/><feOffset dx="1" dy="-9" in="shadowBlurInner1" result="shadowOffsetInner1"/><feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" in="shadowInnerInner1"/></filter></defs><path d="M0 282.998l2.123-2.972L102.527 89.512l.212-2.017L58.48 4.358C54.77-2.606 44.33-.845 43.114 6.951L0 282.998z" fill="#FFC24A"/><use fill="#FFA712" fill-rule="evenodd" xlink:href="#a"/><use filter="url(#b)" xlink:href="#a"/><path d="M135.005 150.38l32.955-33.75-32.965-62.93c-3.129-5.957-11.866-5.975-14.962 0L102.42 87.287v2.86l32.584 60.233z" fill="#F4BD62"/><use fill="#FFA50E" fill-rule="evenodd" xlink:href="#c"/><use filter="url(#d)" xlink:href="#c"/><path fill="#F6820C" d="M0 282.998l.962-.968 3.496-1.42 128.477-128 1.628-4.431-32.05-61.074z"/><path d="M139.121 347.551l116.275-64.847-33.204-204.495c-1.039-6.398-8.888-8.927-13.468-4.34L0 282.998l115.608 64.548a24.126 24.126 0 0 0 23.513.005" fill="#FDE068"/><path d="M254.354 282.16L221.402 79.218c-1.03-6.35-7.558-8.977-12.103-4.424L1.29 282.6l114.339 63.908a23.943 23.943 0 0 0 23.334.006l115.392-64.355z" fill="#FCCA3F"/><path d="M139.12 345.64a24.126 24.126 0 0 1-23.512-.005L.931 282.015l-.93.983 115.607 64.548a24.126 24.126 0 0 0 23.513.005l116.275-64.847-.285-1.752-115.99 64.689z" fill="#EEAB37"/></svg>
+                            </div>
+                            <div class="col-sm-3 col-md-4 col-lg-4 col-xl-4 iconTech">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 16 16" fill="none"><path fill="#EA4335" d="M10.313 5.376l1.887-1.5-.332-.414a5.935 5.935 0 00-5.586-1.217 5.89 5.89 0 00-3.978 4.084c-.03.113.312-.098.463-.056l2.608-.428s.127-.124.201-.205c1.16-1.266 3.126-1.432 4.465-.354l.272.09z"/><path fill="#4285F4" d="M13.637 6.3a5.835 5.835 0 00-1.77-2.838l-1.83 1.82a3.226 3.226 0 011.193 2.564v.323c.9 0 1.63.725 1.63 1.62 0 .893-.73 1.619-1.63 1.619l-3.257-.003-.325.035v2.507l.325.053h3.257a4.234 4.234 0 004.08-2.962A4.199 4.199 0 0013.636 6.3z"/><path fill="#34A853" d="M4.711 13.999H7.97v-2.594H4.71c-.232 0-.461-.066-.672-.161l-.458.14-1.313 1.297-.114.447a4.254 4.254 0 002.557.87z"/><path fill="#FBBC05" d="M4.711 5.572A4.234 4.234 0 00.721 8.44a4.206 4.206 0 001.433 4.688l1.89-1.884a1.617 1.617 0 01.44-3.079 1.63 1.63 0 011.714.936l1.89-1.878A4.24 4.24 0 004.71 5.572z"/></svg>                            
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>                  
@@ -495,6 +557,91 @@ document.querySelector('#app').innerHTML = `
 </div>
 </section>
 
+<!-- Screenshot Modal -->
+<div class="screenshot-modal" id="screenshotModal" onclick="closeScreenshotModal()">
+    <span class="modal-close">×</span>
+    <img id="modalImage" src="" alt="Screenshot">
+</div>
+
 `
 
 
+// ===================================
+// POWERSHELL COMMAND HANDLER
+// ===================================
+// Este código se ejecuta después de que el HTML se renderiza
+document.getElementById('commandForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita que el formulario se envíe
+    const inputValue = document.getElementById('commandInput').value.trim().toLowerCase();
+    const outputContainer = document.getElementById('outputContainer');
+
+    // Muestra el div correspondiente según el comando ingresado
+    if (inputValue === 'cd c:\\users\\home\\proyectos') {
+        windowManager.open('v2', 'minimizedWindowsProjects');
+        outputContainer.innerHTML = '';
+    } else if (inputValue === 'cd c:\\users\\home\\curriculum') {
+        windowManager.open('v3', 'minimizedWindowsCV');
+        outputContainer.innerHTML = '';
+    } else if (inputValue === 'cd c:\\users\\home\\tecnologias') {
+        windowManager.open('v4', 'minimizedWindowsST');
+        outputContainer.innerHTML = '';
+    } else {
+        const errorMessage = "El término '" + inputValue + "' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e inténtelo de nuevo.";
+        displayError(errorMessage);
+    }
+
+    function displayError(message) {
+        outputContainer.innerHTML = '<div class="error-message"><p style="color: #ff6b6b; margin: 10px 0;">' + message + '</p></div>';
+    }
+
+    // Limpia el input después de ejecutar el comando
+    document.getElementById('commandInput').value = '';
+});
+
+// ===================================
+// SCREENSHOT GALLERY FUNCTIONS
+// ===================================
+
+// Scroll gallery left or right
+function scrollGallery(galleryId, direction) {
+    const gallery = document.getElementById(galleryId);
+    if (gallery) {
+        const scrollAmount = 300; // pixels to scroll
+        gallery.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Open screenshot in fullscreen modal
+function openScreenshotModal(element) {
+    const modal = document.getElementById('screenshotModal');
+    const modalImage = document.getElementById('modalImage');
+    const img = element.querySelector('img');
+
+    if (modal && modalImage && img) {
+        modalImage.src = img.src;
+        modalImage.alt = img.alt;
+        modal.classList.add('active');
+
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Close screenshot modal
+function closeScreenshotModal() {
+    const modal = document.getElementById('screenshotModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close modal with ESC key
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        closeScreenshotModal();
+    }
+});
