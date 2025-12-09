@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("windowP").style.display="none";
+        document.getElementById("sectionBtnOn").style.display = "flex";
+    });
+document.addEventListener("DOMContentLoaded", function() {
     var button = document.getElementById('fullscreen-btn');
     var body = document.body;
     var contentWindows = document.querySelector('.contentWindows');
@@ -46,11 +50,8 @@ function linkedIn(){
 function gitHub(){
     window.open("https://github.com/3steban96");
 }
-function mail(){
-    var mail = "andersonrodriguez748@gmail.com";
-    var subject = "Estoy interesado en tus servicios"
-    var mailToLink="mailto:" + mail + "?subject=" + encodeURIComponent(subject);
-    window.location.href = mailToLink;
+function whatsapp(){
+    window.open("https://wa.me/573012246095");
 }
 function btnOff() {
 var ventana = window.open("", "_self");
@@ -81,24 +82,22 @@ function stackTech(){
     iconProjects.style.display="block";
     display.style.display = "block";
 }
-function toggleWindow(windowId) {
-    const windows = ["downloadMusic", "convertFile", "fiapp"];
-    windows.forEach(id => {
-        const windowElement = document.getElementById(id);
-        windowElement.style.display = (id === windowId) ? "block" : "none";
-    });
-}
-
 function wDownloadMusic() {
-    toggleWindow("downloadMusic");
+    var windowDM = document.getElementById("downloadMusic");
+    var windowCF = document.getElementById("convertFile");
+    if (windowCF.style.display == "block") {
+        windowCF.style.display = "none";
+    }
+    windowDM.style.display = "block";
 }
 
 function wConvertFile() {
-    toggleWindow("convertFile");
-}
-
-function wFiapp() {
-    toggleWindow("fiapp");
+    var windowCF = document.getElementById("convertFile");
+    var windowDM = document.getElementById("downloadMusic");
+    if (windowDM.style.display == "block") {
+        windowDM.style.display = "none";
+    }
+    windowCF.style.display = "block";
 }
 document.addEventListener("DOMContentLoaded", function() {
     const input = document.querySelector(".inputDownloadMusic");
@@ -143,23 +142,23 @@ function downloadMusicMP3() {
         if (!response.ok) {
             throw new Error('Error al descargar el archivo de audio');
         }
-        return response.json(); // Ahora esperamos la respuesta como JSON
+        return response.blob();
     })
-    .then(data => {
-        const { fileName, audioData } = data; // Obtenemos el nombre del archivo y los datos de audio del backend
-        const url = 'data:audio/mp3;base64,' + audioData; // Creamos la URL de los datos de audio
-
+    .then(blob => {
+        const url = window.URL.createObjectURL(blob, { type: 'audio/mp3' });
         const a = document.createElement('a');
         a.href = url;
-        a.download = fileName; // Asignamos el nombre del archivo proporcionado por el backend
+        a.download = 'audio.mp3'; 
         document.body.appendChild(a);
         a.click();
+        window.URL.revokeObjectURL(url);
         a.remove();
     })
     .catch(error => {
         console.error('Error al descargar el archivo de audio:', error);
     });
 };
+
 function downloadVideo() {
     const inputDW = document.querySelector(".inputDownloadMusic").value;
     fetch('https://backenddownloadmusic-1.onrender.com/downloadMp4',{
@@ -173,27 +172,22 @@ function downloadVideo() {
         if (!response.ok) {
             throw new Error('Error al descargar el archivo');
         }
-        return response.blob(); // Esperamos la respuesta como un blob
+        return response.blob();
     })
     .then(blob => {
-        const fileName = 'video.mp4'; // Supongamos que el nombre predeterminado del archivo es video.mp4
-        const url = URL.createObjectURL(blob); // Creamos la URL del archivo
-
+        const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = fileName; // Asignamos el nombre del archivo
+        a.download = 'video.mp4'; 
         document.body.appendChild(a);
         a.click();
+        window.URL.revokeObjectURL(url);
         a.remove();
     })
     .catch(error => {
         console.error('Error al descargar el archivo:', error);
     });
 }
-
-
-
-
 function mostrarNombreArchivos(input) {
     var lista = document.getElementById('listaArchivos');
     lista.innerHTML = ""; 
