@@ -242,7 +242,7 @@ document.querySelector('#app').innerHTML = `
         <div class="row rowContentProjects" >
             <div class="container-fluid contentCol1">
                 <div class="col-12 projects">            
-                    <object data='./CV-AndersonEstebanRodriguezCruz.pdf'type="application/pdf" width="100%" height="100%">
+                    <object data='./CV-AndersonEstebanRodriguezCruz.pdf' type="application/pdf" width="100%" height="100%">
                     </object>                            
                 </div>
             </div>                  
