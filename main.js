@@ -113,15 +113,15 @@ document.querySelector('#app').innerHTML = `
                                     <div class="screenshots-title">Capturas de pantalla</div>
                                     <div class="screenshots-gallery" id="bizlinguapp-gallery">
                                         <div class="screenshot-item" onclick="openScreenshotModal(this)">
-                                            <img src="./assets/img/bizlinguapp_screenshot_home.jpg" alt="BizLinguapp Interface">
+                                            <img src="./bizlinguapp_screenshot_home.jpg" alt="BizLinguapp Interface">
                                             <div class="screenshot-caption">Interfaz Principal</div>
                                         </div>
                                         <div class="screenshot-item" onclick="openScreenshotModal(this)">
-                                            <img src="./assets/img/bizlinguapp_screenshot_lessons.jpg" alt="Lecciones">
+                                            <img src="./bizlinguapp_screenshot_lessons.jpg" alt="Lecciones">
                                             <div class="screenshot-caption">Lecciones de Vocabulario</div>
                                         </div>
                                         <div class="screenshot-item" onclick="openScreenshotModal(this)">
-                                            <img src="./assets/img/bizlinguapp_screenshot_professional.jpg" alt="Práctica">
+                                            <img src="./bizlinguapp_screenshot_professional.jpg" alt="Práctica">
                                             <div class="screenshot-caption">Ejercicios Prácticos</div>
                                         </div>
                                     </div>
@@ -150,15 +150,15 @@ document.querySelector('#app').innerHTML = `
                                     <div class="screenshots-title">Capturas de pantalla</div>
                                     <div class="screenshots-gallery" id="hseq-gallery">
                                         <div class="screenshot-item" onclick="openScreenshotModal(this)">
-                                            <img src="./assets/img/hseq_screenshot_1.jpg" alt="Dashboard HSEQ">
+                                            <img src="./hseq_screenshot_1.jpg" alt="Dashboard HSEQ">
                                             <div class="screenshot-caption">Panel de Control</div>
                                         </div>
                                         <div class="screenshot-item" onclick="openScreenshotModal(this)">
-                                            <img src="./assets/img/hseq_screenshot_2.jpg" alt="Reportes">
+                                            <img src="./hseq_screenshot_2.jpg" alt="Reportes">
                                             <div class="screenshot-caption">Gestión de Incidentes</div>
                                         </div>
                                         <div class="screenshot-item" onclick="openScreenshotModal(this)">
-                                            <img src="./assets/img/hseq_screenshot_3.jpg" alt="Métricas">
+                                            <img src="./hseq_screenshot_3.jpg" alt="Métricas">
                                             <div class="screenshot-caption">Métricas y Análisis</div>
                                         </div>
                                     </div>
@@ -188,15 +188,15 @@ document.querySelector('#app').innerHTML = `
                                     <div class="screenshots-title">Capturas de pantalla</div>
                                     <div class="screenshots-gallery" id="parking-gallery">
                                         <div class="screenshot-item" onclick="openScreenshotModal(this)">
-                                            <img src="./assets/img/parking_screenshot_1.jpg" alt="Dashboard Parking">
+                                            <img src="./parking_screenshot_1.jpg" alt="Dashboard Parking">
                                             <div class="screenshot-caption">Vista General</div>
                                         </div>
                                         <div class="screenshot-item" onclick="openScreenshotModal(this)">
-                                            <img src="./assets/img/parking_screenshot_2.jpg" alt="Gestión">
+                                            <img src="./parking_screenshot_2.jpg" alt="Gestión">
                                             <div class="screenshot-caption">Control de Espacios</div>
                                         </div>
                                         <div class="screenshot-item" onclick="openScreenshotModal(this)">
-                                            <img src="./assets/img/parking_screenshot_3.jpg" alt="Pagos">
+                                            <img src="./parking_screenshot_3.jpg" alt="Pagos">
                                             <div class="screenshot-caption">Sistema de Pagos</div>
                                         </div>
                                     </div>
@@ -462,10 +462,10 @@ document.querySelector('#app').innerHTML = `
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
                         </button>
                         <button id="minimizedWindowsCV" class="ventana-minimizada"style="border: none; background-color: transparent;width: 100%;" onclick="abrirVentanaCV()">
-                            <img src="./assets/img/cv_13423379.png" style="height: 30px;width: 30px;"/>
+                            <img src="./cv_13423379.png" style="height: 30px;width: 30px;"/>
                         </button>
                         <button id="minimizedWindowsST" class="ventana-minimizada"style="border: none; background-color: transparent;width: 100%;" onclick="abrirVentanaST()">
-                            <img src="./assets/img/stackTech.png" style="height: 30px;width: 30px;"/>
+                            <img src="./stackTech.png" style="height: 30px;width: 30px;"/>
                         </button>
                     </div>                        
                     <div  style="display: flex;align-items: center;">
@@ -552,7 +552,7 @@ document.querySelector('#app').innerHTML = `
 <section id="sectionBtnOn" class="windowsOn">
 <div class="d-flex justify-content-center " >
     <button  id="btnOn" onclick="btnOnW()"class="btnOnW ">
-        <img src="./assets/img/icon_On-Off.png"/>
+        <img src="./icon_On-Off.png"/>
     </button>
 </div>
 </section>
